@@ -1,0 +1,48 @@
+plugins {
+    id 'java-library'
+    id 'org.jetbrains.kotlin.jvm'
+    id 'maven-publish'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_7
+    targetCompatibility = JavaVersion.VERSION_1_7
+}
+
+ext.versions = [
+        'major':        0,
+        'minor':        0,
+        'patch':        1
+]
+
+java {
+    withSourcesJar()
+    withJavadocJar()
+}
+
+dependencies {
+    implementation(
+            'com.google.code.gson:gson:2.9.0'
+    )
+}
+
+task sourceJar(type: Jar) {
+    from sourceSets.main.java.srcDirs
+    classifier "sources"
+}
+
+afterEvaluate {
+    publishing {
+        repositories {
+            mavenLocal()
+        }
+        publications {
+            release(MavenPublication) {
+                from components.java
+                groupId = 'com.cincinnatiai'
+                artifactId = 'landlord.data'
+                version = "${versions.major}.${versions.minor}.${versions.patch}"
+            }
+        }
+    }
+}
