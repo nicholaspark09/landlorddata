@@ -10,5 +10,7 @@ data class Property(
     val nextAvailableDate: String? = null,
     val totalOccupants: Int? = null,
     val bedrooms: Int? = null,
-    val bathrooms: Int? = null
+    val bathrooms: Int? = null,
+    val thumbnail: String? = null,
+    val largeImage: String? = null
 )
