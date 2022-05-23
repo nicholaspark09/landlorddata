@@ -1,11 +1,12 @@
 package com.atlantaai.landlord.data.api
 
-data class PropertyQuery(
-    val street: String? = null,
-    val city: String? = null,
-    val state: String? = null,
-    val zip: String? = null,
-    val latitude: Double? = null,
-    val longitude: Double? = null,
+interface PropertyQuery {
+    val geohash: String?
+    val street: String?
+    val city: String?
+    val state: String?
+    val zip: String?
+    val latitude: Double?
+    val longitude: Double?
     val limit: Int
-)
+}

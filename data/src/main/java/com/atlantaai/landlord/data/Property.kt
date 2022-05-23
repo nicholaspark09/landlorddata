@@ -1,16 +1,19 @@
 package com.atlantaai.landlord.data
 
-data class Property(
-    val id: Long? = null,
-    val title: String? = null,
-    val description: String? = null,
-    val address: Address? = null,
-    val rentPerMonth: Double? = null,
-    val isAvailable: Boolean = false,
-    val nextAvailableDate: String? = null,
-    val totalOccupants: Int? = null,
-    val bedrooms: Int? = null,
-    val bathrooms: Int? = null,
-    val thumbnail: String? = null,
-    val largeImage: String? = null
-)
+interface Property {
+    val id: Long? 
+    val title: String? 
+    val description: String? 
+    val address: Address? 
+    val rentPerMonth: Double? 
+    val isAvailable: Boolean
+    val nextAvailableDate: String? 
+    val totalOccupants: Int? 
+    val bedrooms: Int? 
+    val bathrooms: Int? 
+    val thumbnail: String? 
+    val largeImage: String? 
+    val latitude: Double? 
+    val longitude: Double? 
+    val geohash: String?
+}

@@ -1,10 +1,10 @@
 package com.atlantaai.landlord.data
 
-data class Address(
-    val streetAddress: String? = null,
-    val zipCode: Int? = null,
-    val city: String? = null,
-    val state: String? = null,
-    val latitude: Double? = null,
-    val longitude: Double? = null
-)
+interface Address {
+    val streetAddress: String
+    val zipCode: Int
+    val city: String
+    val state: String
+    val latitude: Double
+    val longitude: Double
+}
