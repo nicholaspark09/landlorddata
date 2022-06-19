@@ -17,4 +17,5 @@ interface Property {
     var longitude: Double? 
     var geohash: String?
     var city: String?
+    var userId: String?
 }
